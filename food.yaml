@@ -1,0 +1,35 @@
+# Ultralytics YOLO 🚀, AGPL-3.0 license
+# COCO 2017 dataset http://cocodataset.org by Microsoft
+# Example usage: yolo train data=coco.yaml
+# parent
+# ├── ultralytics
+# └── datasets
+#     └── coco  ← downloads here (20.1 GB)
+
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path:   # dataset root dir
+train: /media/home/intern/train_code/yolov5-master-7-6/food_all_data/train.txt  # train images (relative to 'path') 118287 images
+val:   D:\\Recallcaculate\\datasets\\images # val images (relative to 'path') 5000 images
+test: D:\\Recallcaculate\\datasets\\images  # 20288 of 40670 images, submit to https://competitions.codalab.org/competitions/20794
+
+# Classes
+names: ['','red_Fuji', 'snakefruit', 'yellow_apple', 'small_apple', 'green_apple', 'gala_apple', 'wild_peach', 'honey_peach', 'nectarine', 'big_banana ', 'banana', 'plantain', 'lit', 'durian', 'dragonfruit_red', 'dragonfruit_white', '', 'kyoho_grape', 'green_grape', 'red_grape', '', '', '', 'kiwifruit', 'yellow_kiwifruit', '', 'yellow_lemon', 'green_lemon', 'big_yellow_lemon', '', 'longan', '', 'tainong_mango', 'little_gold_mango', 'big_gold_mango', 'big_green_mango', 'red_pomelo', 'white_pomelo', 'avocado', 'orange', 'navel_orange', 'citrus', '', '', 'pear', 'chinese_royalpear', 'early_crisp_pear', 'fragrant_pear', 'duke_pear', 'crown_pear','', '', 'green_pineapple', 'yellow_pineapple', 'blueberry', 'strawberry', '', '', 'black_plum', 'green_plum', 'sanhua_plum', '', 'potato', 'small_potatoes', '', 'squash', '', 'red_sweet_potato', 'purple_sweet_potato', 'red_cherry_tomato', 'yellow_cherry_tomato', 'taro','little_taro', '', 'tomato', 'pink_tomato', 'little_tomato', 'wild_cabbage', '','bitter_gourd','balsam_pear','','broccoli','','cabbage','','carrot','fruit_carrot','','cauliflower','','ice_cream','sea_fish','steak','','','','','spinach','celery','coriander','leek','chinese_cabbage','purple_eggplant','black_eggplant','','','','','old_ginger','tender_ginger','','lettuce','leaf_lettuce','mustard','','','','pizza','model_chicken_wings','model_steak','model_chicken','model_pork_shoulder','model_fish','scallion','amaranth','water_spinach','garlic_sprouts','long_bean','short_whitebeans','','mushroom','white_mushroom','needle_mushroom','','','','','pork','beef','mutton','','','chicken','duck','pigeon','','','spanish_mackerel','yellow_croaker','crucian','perch','tilapia','salmon','tuna','blackfish','beef_meatballs','fish_meatballs','shrimp_paste','scallop','Oyster','','sea_tangle','BAXY','chicecream','river_shrimp','roche_shrimp','lobster','prawn','','hairy_crabs','swimming_crab','apple','pear','lemon','orange','dragonfruit','peach','banana','lit','plum','grape','tomato','eggplant','potato','vegetable','mushroom','ginger','balsam_pear','broccoli','sweet_potato','carrot','cabbage','beans','meat','poultry','fish','shrimp','crab','shellfish','meatballs','edible_seaweed','bag','container','dumpling','wolfberry','pine_mushroom','lotus_seed','american_ginseng','boletus_aereus','chicken_fir','morel','cherry','french_fries','box','plate','bowl','pot','white_basket','transparent_basket','pomelo','','','','','','','','','','','','','','','','','','','','','','','','','','','food','other','head','freezer_up_drawer','freezer_down_drawer','drawer','bag','hand']  # class names
+
+
+# Download script/URL (optional)
+# download: |
+  # from ultralytics.utils.downloads import download
+  # from pathlib import Path
+
+  #Download labels
+  # segments = True  # segment or box labels
+  # dir = Path(yaml['path'])  # dataset root dir
+  # url = 'https://github.com/ultralytics/yolov5/releases/download/v1.0/'
+  # urls = [url + ('coco2017labels-segments.zip' if segments else 'coco2017labels.zip')]  # labels
+  # download(urls, dir=dir.parent)
+  #Download data
+  # urls = ['http://images.cocodataset.org/zips/train2017.zip',  # 19G, 118k images
+          # 'http://images.cocodataset.org/zips/val2017.zip',  # 1G, 5k images
+          # 'http://images.cocodataset.org/zips/test2017.zip']  # 7G, 41k images (optional)
+  # download(urls, dir=dir / 'images', threads=3)

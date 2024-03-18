@@ -1,0 +1,25 @@
+1.Pr-Recall-Cacualte.py
+
+YOLO_test_val()函数计算yolo模型的map
+输入：data=./food.yaml   食材列表
+输出：map50 
+
+tramsformer_val()
+输入：数据集路径
+输出：各类的精确率和召回率以及其平均值 （以字典形式存储）
+运行后，会把识别结果体现在图像的文件名中
+
+数据集存放格式：./clsfction 目录下 存放foodname图片文件夹，foodname 取值为swin-3-12.json中各类的名称，foodname下存放切好的图片。
+
+
+
+2.twostep_predict.py
+
+swin_trans_predict()函数将送入的图片矩阵送入swin_trans模型进行推理，得到识别的食材属于哪一类
+
+single_img_process()函数实现将送入的图片矩阵送入yolo模型进行推理，并将食材抠出送入swin_trans模型得到食材类别，最终得到绘制矩形框的图片矩阵，其中类别为food
+的矩形框被替换为swin_trans识别的结果，但置信度仍然为yolo模型推理出的置信度。
+
+
+3.batubaocun.py
+实现将./videos路径下的视频组拆分成图片帧，然后送入两个模型中识别，最终将识别结果绘制到图片上保存。图片保存路径：./images
